@@ -2,11 +2,11 @@ pipeline {
     agent any
     
     environment {
-        //DOCKERHUB_USERNAME = 'kiriti7'
+        //DOCKERHUB_USERNAME = 'Venky02'
         DOCKERHUB_CREDENTIALS = credentials('docker')
-        DOCKER_IMAGE_NAME = 'myweb_nginx'
-        DOCKERHUB_REPO = 'kiriti7/nginxapp'
-        DOCKERFILE_PATH = '/var/lib/jenkins/workspace/DockerImage/Dockerfile'
+        DOCKER_IMAGE_NAME = 'hotstar'
+        DOCKERHUB_REPO = 'Venky02/myngnix'
+        DOCKERFILE_PATH = '/var/lib/jenkins/workspace/Dockerdeploy/Dockerfile'
 	DOCKER_CONTAINER = 'my-first-nginx'
     }
     
@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Pull Sources') {
             steps {
-		    git url: 'https://github.com/kiriti07/docker-cicd.git', branch: 'main'
+		    git url: 'https://github.com/Venky055/docker-cicd.git', branch: 'main'
 		    //sh 'chmod +x /var/lib/jenkins/workspace/DockerImage/'
             }
          }
@@ -33,7 +33,7 @@ pipeline {
             steps {
 		    sh 'docker run -d --name $DOCKER_CONTAINER -p 8070:80 $DOCKER_IMAGE_NAME'
 		    sh 'docker ps'
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p Kreative@Clicks@07'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p Lovelly@2'
                     sh 'docker tag $DOCKER_IMAGE_NAME $DOCKERHUB_REPO'
             }
         }
