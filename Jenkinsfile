@@ -33,7 +33,7 @@ pipeline {
             steps {
 		    sh 'docker run -d --name $DOCKER_CONTAINER -p 8070:80 $DOCKER_IMAGE_NAME'
 		    sh 'docker ps'
-                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p --password-stdin.'
+                    sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR -p Lovelly@2'
                     sh 'docker tag $DOCKER_IMAGE_NAME $DOCKERHUB_REPO'
             }
         }
