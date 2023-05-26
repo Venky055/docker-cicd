@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         //DOCKERHUB_USERNAME = 'Venky02'
-        DOCKERHUB_CREDENTIALS = credentials('docker')
+        DOCKERHUB_CREDENTIALS = credentials('Venky')
         DOCKER_IMAGE_NAME = 'hotstar'
         DOCKERHUB_REPO = 'Venky02/myngnix'
         DOCKERFILE_PATH = '/var/lib/jenkins/workspace/Dockerdeploy/Dockerfile'
