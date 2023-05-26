@@ -5,7 +5,7 @@ pipeline {
         //DOCKERHUB_USERNAME = 'Venky02'
         DOCKERHUB_CREDENTIALS = credentials('Venky')
         DOCKER_IMAGE_NAME = 'hotstar'
-        DOCKERHUB_REPO = 'Venky02/myngnix'
+        DOCKERHUB_REPO = 'venky02/myngnix'
         DOCKERFILE_PATH = '/var/lib/jenkins/workspace/Dockerdeploy/Dockerfile'
 	DOCKER_CONTAINER = 'my-first-nginx'
     }
